@@ -12,6 +12,24 @@ class ChecklistViewController: UITableViewController {
     
     var items: [ChecklistItem]
 
+    @IBAction func addItem(_ sender: Any) {
+        let item = ChecklistItem("I am new item")
+        
+        let newRowItem = items.count
+        items.append(item)
+        
+        let indexPath = IndexPath(row: newRowItem, section: 0)
+        let indexPaths = [indexPath]
+        tableView.insertRows(at: indexPaths, with: .automatic)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        let indexPaths = [indexPath]
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         items = [ChecklistItem]()
         
