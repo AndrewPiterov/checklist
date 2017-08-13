@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C422647F1F40ECE7008DA85F /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = C422647E1F40ECE7008DA85F /* Readme.md */; };
 		C43DDED41F3B451000F58D13 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43DDED31F3B451000F58D13 /* AddItemViewController.swift */; };
 		C4598BF81F38CA2B008DB94C /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4598BF71F38CA2B008DB94C /* ChecklistItem.swift */; };
 		C4C8FA411F3768ED00EAC535 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8FA401F3768ED00EAC535 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C422647E1F40ECE7008DA85F /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		C43DDED31F3B451000F58D13 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		C4598BF71F38CA2B008DB94C /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		C4C8FA3D1F3768ED00EAC535 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +44,7 @@
 		C4C8FA341F3768ED00EAC535 = {
 			isa = PBXGroup;
 			children = (
+				C422647E1F40ECE7008DA85F /* Readme.md */,
 				C4C8FA3F1F3768ED00EAC535 /* Checklists */,
 				C4C8FA3E1F3768ED00EAC535 /* Products */,
 			);
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C422647F1F40ECE7008DA85F /* Readme.md in Sources */,
 				C4C8FA411F3768ED00EAC535 /* AppDelegate.swift in Sources */,
 				C43DDED41F3B451000F58D13 /* AddItemViewController.swift in Sources */,
 				C4598BF81F38CA2B008DB94C /* ChecklistItem.swift in Sources */,
