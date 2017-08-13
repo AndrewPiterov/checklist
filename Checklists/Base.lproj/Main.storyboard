@@ -18,15 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="9WH-Nj-roi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="9WH-Nj-roi">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9WH-Nj-roi" id="rq7-FQ-S3P">
-                                    <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="one-m1-CsN">
-                                            <rect key="frame" x="14" y="11" width="314" height="21"/>
+                                            <rect key="frame" x="45" y="11" width="263" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="✔️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEW-Gz-FWA">
+                                            <rect key="frame" x="8" y="11" width="23" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -34,6 +41,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="v3e-bd-iBr" kind="presentation" identifier="EditItem" id="iNc-D4-9f2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="eN4-dQ-A5h">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cDZ-H1-3PH">
                             <connections>
-                                <segue destination="v3e-bd-iBr" kind="show" id="KPT-U2-PUV"/>
+                                <segue destination="v3e-bd-iBr" kind="show" identifier="AddItem" id="KPT-U2-PUV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -53,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="1018.4" y="45.42728635682159"/>
         </scene>
-        <!--Add Item View Controller-->
+        <!--Add item-->
         <scene sceneID="OYk-lx-iPK">
             <objects>
                 <tableViewController id="KB7-5J-yVN" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +108,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="o3s-59-RFm">
+                    <navigationItem key="navigationItem" title="Add item" id="o3s-59-RFm">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gSx-bG-ncS">
                             <connections>
                                 <action selector="cancel:" destination="KB7-5J-yVN" id="GUQ-xL-bCJ"/>
@@ -157,4 +167,7 @@
             <point key="canvasLocation" x="1949.5999999999999" y="44.527736131934034"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="iNc-D4-9f2"/>
+    </inferredMetricsTieBreakers>
 </document>

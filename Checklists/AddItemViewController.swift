@@ -8,10 +8,27 @@
 
 import UIKit
 
+protocol AddItemViewControllerDelegate: class {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController)
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemViewController, didFinishEdeting item: ChecklistItem)
+}
+
 class AddItemViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var doneBarBtn: UIBarButtonItem!
     @IBOutlet weak var textField: UITextField!
+    
+    weak var delegate: AddItemViewControllerDelegate?
+    var itemToEdit: ChecklistItem?
+    
+    override func viewDidLoad() {
+        if let item = itemToEdit{
+            title = "Edit Item"
+            textField.text = item.text
+            doneBarBtn.isEnabled = true
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,11 +44,16 @@ class AddItemViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func done(_ sender: Any) {
-        print("Content of the text field: \(textField.text!)")
-        dismiss(animated: true, completion: nil)
+        if let item = itemToEdit{
+            item.text = textField.text!
+            delegate?.addItemViewController(self, didFinishEdeting: item)
+        } else{
+            let item = ChecklistItem(textField.text!)
+            delegate?.addItemViewController(self, didFinishAdding: item)
+        }
     }
     
     @IBAction func cancel(_ sender: Any){
-        dismiss(animated: true, completion: nil)
+        delegate?.addItemViewControllerDidCancel(self)
     }
 }
