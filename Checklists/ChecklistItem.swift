@@ -8,12 +8,12 @@
 
 import Foundation
 
-class ChecklistItem: NSObject {
+class ChecklistItem: NSObject, NSCoding {
     var text = ""
     var checked = false
     
     override init(){
-        
+        super.init()
     }
     
     convenience init(_ withText: String) {
@@ -23,6 +23,17 @@ class ChecklistItem: NSObject {
     init(_ withText: String, checked: Bool) {
         self.text = withText
         self.checked = checked
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        text = aDecoder.decodeObject(forKey: "Text") as! String
+        checked = aDecoder.decodeBool(forKey: "Checked")
+        super.init()
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(text, forKey: "Text")
+        aCoder.encode(checked, forKey: "Checked")
     }
     
     func toggleChecker(){
